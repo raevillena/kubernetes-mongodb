@@ -24,10 +24,12 @@ spec:
           value: "admin"
         - name: MONGO_INITDB_ROOT_PASSWORD
           value: "password"
+        - name: MONGO_INITDB_DATABASE
+          value: "admin"
         volumeMounts:
-        - name: "mongo-data-dir"
+        - name: mongo-data-dir
           mountPath: "/data/db"
       volumes:
-      - name: "mongo-data-dir"
+      - name: mongo-data-dir
         persistentVolumeClaim:
-          claimName: "mongo-data"
+          claimName: mongo-data
